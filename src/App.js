@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import styles from './App.module.css';
+import NewTaskForm from './components/NewTaskForm.js';
+import Tasks from './components/Tasks.js';
+import React, { useState } from 'react';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [currentTasks, setCurrentTasks] = useState([]);
+
+    const onAddTask = task => {
+        setCurrentTasks(prevCurrentTasks => {
+            return (
+                [...prevCurrentTasks, task]
+            );
+        })
+    }
+
+    const onDeleteTask = key => {
+        console.log("Called on " + key);
+        let tasks = currentTasks.filter(task => task !== key);
+        console.log("Tasks...");
+        console.log(tasks);
+        setCurrentTasks(tasks);
+    }
+
+    const onDeleteAll = () => {
+        setCurrentTasks([]);
+    }
+
+    return (
+        <div className={styles.container}>
+            <NewTaskForm className={styles.form} onAddTask={onAddTask} />
+            <Tasks tasks={currentTasks} onDelete={onDeleteTask} />
+            <button onClick={onDeleteAll} className={styles.button}>Delete All</button>
+        </div>
+    )
 }
 
 export default App;

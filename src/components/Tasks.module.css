@@ -1,0 +1,27 @@
+.listItem {
+    display: block;
+    list-style-type: none;
+    margin-top: 1.5vh;
+    color: black;
+    opacity: .55;
+    text-align: center;
+    min-width: 100%;
+    padding: 1vh;
+}
+
+.list {
+    text-align: center;
+    margin-right: 3vw;
+}
+
+.button {
+    border: none;
+    background-color: red;
+    margin-left: .4vw;
+    padding: .7vh;
+}
+
+.itemContainer {
+    background-color: gray;
+}
+

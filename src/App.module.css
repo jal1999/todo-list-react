@@ -1,0 +1,27 @@
+*{
+  box-sizing: border-box;
+}
+body {
+  background-color: black;
+}
+
+.container {
+  display: inline-block;
+  padding: 3vh;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.button {
+  border: solid .2rem black;
+  border-radius: 50vh;
+  padding-left: .75rem;
+  padding-right: .75rem;
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+}
+
