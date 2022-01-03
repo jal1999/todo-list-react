@@ -18,7 +18,6 @@ const NewTaskForm = props => {
             <form className={styles.form} onSubmit={onSubmit}>
                 <label>Task name</label>
                 <input value={currentTask} type="text" onChange={taskChangeHandler}/>
-                {/* <button type="submit">Add</button> */}
             </form>
         </div>
     );
