@@ -16,10 +16,7 @@ function App() {
     }
 
     const onDeleteTask = key => {
-        console.log("Called on " + key);
         let tasks = currentTasks.filter(task => task !== key);
-        console.log("Tasks...");
-        console.log(tasks);
         setCurrentTasks(tasks);
     }
 
